@@ -13,7 +13,7 @@ def refresh_page():
 
 def get_form_data():
     study = st.number_input('Во сколько лет вы освоили базовый функционал для работы аналитиком', 18, 70, step=5)
-    work_age = st.number_input('Во сколько лет вы устроились на работу', 18, 75, step=5)
+    work_age = st.number_input('Во сколько лет вы устроились на работу аналитиком', 18, 75, step=5)
     growth = st.number_input('Оцените по 10-бальной шкале как выросли ваши навыки за время пока вы искали работу', 0, 10, step=1)
     growth_with_work = st.number_input('Оцените по 10-бальной шкале как выросли ваши навыки за первые полгода '
                                        'как вы устроились на работу', 0, 10, step=1)
@@ -64,8 +64,8 @@ plt.hist(df['work_age'] - df['final_study'],
 plt.grid(True, alpha=0.3)
 plt.xlim(0)
 plt.title('Сколько лет прошло, пока люди искали работу')
-plt.xlabel('Количество лет')
-plt.ylabel('Количество людей')
+plt.xlabel('Количество людей')
+plt.ylabel('Количество лет')
 new_list = range(min(df['work_age'] - df['final_study']), max(df['work_age'] - df['final_study'])+1)
 plt.yticks(new_list)
 st.pyplot(plt)
